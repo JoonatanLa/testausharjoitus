@@ -14,9 +14,10 @@ AIKUINEN_HINTA = 15.0
 ELAKELAINEN_HINTA = 10.0
 RYHMAN_KOKO = 10
 RYHMA_ALENNUS = 0.10
+OPISKELIJA_HINTA = 10.0
 
 
-def lippuhinta(ika):
+def lippuhinta(ika, opiskelija=False):
     """Palauttaa yhden lipun hinnan euroina iän perusteella."""
     if ika < 0 or ika > 120:
         raise ValueError("Ikä on virheellinen")
@@ -25,6 +26,8 @@ def lippuhinta(ika):
     if ika <= 17:
         return LAPSI_HINTA
     if ika <= 64:
+        if opiskelija:
+            return OPISKELIJA_HINTA
         return AIKUINEN_HINTA
     return ELAKELAINEN_HINTA
 
