@@ -13,6 +13,9 @@ def test_aikuisen_hinta():
     # Assert: tarkistetaan tulos
     assert hinta == 15.0
 
+def test_opiskelija_lippu():
+    assert lippuhinta(20, opiskelija=True) == 10.0
+
 
 # TEHTÄVÄ 2: Raja-arvot yhdellä parametrisoidulla testillä.
 # Täydennä alla olevaan listaan pareja (ikä, odotettu hinta).
